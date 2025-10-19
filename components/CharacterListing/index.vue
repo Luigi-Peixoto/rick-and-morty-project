@@ -1,5 +1,5 @@
 <template>
-  <section class="flex flex-col w-full max-w-[1224px] mx-auto gap-8">
+  <section class="flex flex-col gap-8">
     <div class="flex flex-wrap gap-4 justify-center xl:justify-start">
       <ListingHeader title="Personagens" />
 
@@ -26,7 +26,10 @@
               <IconsHeartOutlined v-else />
             </div>
           </div>
-          <KnowMore :action-url="currentCharacter.url" class="mt-auto" />
+          <KnowMore
+            :action-url="`character/${currentCharacter.id}`"
+            class="mt-auto"
+          />
         </Card>
       </div>
     </div>

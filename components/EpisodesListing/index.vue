@@ -16,7 +16,10 @@
           </div>
 
           <div class="flex items-center justify-between">
-            <KnowMore class="my-auto" />
+            <KnowMore
+              action-url="episode/{{currentEpisode.id}}"
+              class="my-auto"
+            />
             <IconsHeartFilled :width="32" :height="32" />
           </div>
         </Card>
@@ -31,4 +34,5 @@ import KnowMore from '@/components/KnowMore/index.vue';
 import ListingHeader from '@/components/ListingHeader/index.vue';
 
 const { data } = await useFetch('https://rickandmortyapi.com/api/episode');
+console.log(data.value.results);
 </script>
