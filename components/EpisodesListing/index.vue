@@ -4,11 +4,11 @@
       <ListingHeader title="Episódios" />
 
       <div
-        class="flex gap-4 flex-wrap justify-center lg:grid-cols-[repeat(5,1fr)]"
+        class="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5"
       >
         <Card
-          v-for="currentEpisode of data.results"
-          class="flex flex-col gap-2 justify-between min-h-[150px] max-w-[250px]"
+          v-for="currentEpisode of data.results.slice(0, 5)"
+          class="flex flex-col gap-2 justify-between min-h-[150px]"
         >
           <div class="flex gap-2 item-center">
             <IconsMonitorPlay class="flex-[0_0_24px]" />
@@ -20,7 +20,6 @@
               action-url="episode/{{currentEpisode.id}}"
               class="my-auto"
             />
-            <IconsHeartFilled :width="32" :height="32" />
           </div>
         </Card>
       </div>

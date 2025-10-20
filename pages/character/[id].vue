@@ -1,30 +1,33 @@
 <template>
-  <div class="flex gap-16">
-    <img
-      :src="data.image"
-      class="w-[369px] h-[461px] object-cover rounded-2xl"
-    />
-    <div class="flex flex-col gap-12">
-      <div class="flex gap-4 items-center">
-        <h1 class="font-bold text-5xl">{{ data.name }}</h1>
-        <IconsHeartOutlined />
-      </div>
+  <PageContainer>
+    <div class="flex gap-16">
+      <img
+        :src="data.image"
+        class="w-[369px] h-[461px] object-cover rounded-2xl"
+      />
+      <div class="flex flex-col gap-12">
+        <div class="flex gap-4 items-center">
+          <h1 class="font-bold text-5xl">{{ data.name }}</h1>
+        </div>
 
-      <span class="flex gap-2 text-2xl items-center"
-        ><IconsMonitorPlay />Participou de
-        {{ data.episode.length }} episódios</span
-      >
+        <span class="flex gap-2 text-2xl items-center"
+          ><IconsMonitorPlay />Participou de
+          {{ data.episode.length }} episódios</span
+        >
 
-      <div class="flex text-2xl gap-6">
-        <p>{{ data.status === 'Alive' ? 'Vivo' : 'Morto' }}</p>
-        <p>{{ data.species }}</p>
-        <p>{{ data.gender }}</p>
+        <div class="flex text-2xl gap-6">
+          <p>{{ data.status === 'Alive' ? 'Vivo' : 'Morto' }}</p>
+          <p>{{ data.species }}</p>
+          <p>{{ data.gender }}</p>
+        </div>
       </div>
     </div>
-  </div>
+  </PageContainer>
 </template>
 
 <script setup>
+import PageContainer from '@/components/PageContainer/index.vue';
+
 const route = useRoute();
 
 const { id } = route.params;
