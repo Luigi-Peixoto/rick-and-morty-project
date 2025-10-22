@@ -33,5 +33,4 @@ import KnowMore from '@/components/KnowMore/index.vue';
 import ListingHeader from '@/components/ListingHeader/index.vue';
 
 const { data } = await useFetch('https://rickandmortyapi.com/api/episode');
-console.log(data.value.results);
 </script>

@@ -16,9 +16,18 @@
         >
 
         <div class="flex text-2xl gap-6">
-          <p>{{ data.status === 'Alive' ? 'Vivo' : 'Morto' }}</p>
-          <p>{{ data.species }}</p>
-          <p>{{ data.gender }}</p>
+          <span class="flex items-center gap-1">
+            <IconsPulse />
+            {{ getStatus(data.status) }}
+          </span>
+          <span class="flex items-center gap-1">
+            <IconsAlien />
+            {{ getSpecies(data.species) }}
+          </span>
+          <span class="flex items-center gap-1">
+            <IconsPlanet />
+            {{ getGender(data.gender) }}
+          </span>
         </div>
       </div>
     </div>
@@ -34,8 +43,6 @@ const { id } = route.params;
 const { data } = await useFetch(
   `https://rickandmortyapi.com/api/character/${id}`,
 );
-
-console.log(data.value);
 
 useHead({
   title: `${data.value.name} - Rick and Morty`,

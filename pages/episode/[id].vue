@@ -35,8 +35,6 @@ const { data } = await useFetch(
   `https://rickandmortyapi.com/api/character/${id}`,
 );
 
-console.log(data.value);
-
 useHead({
   title: `${data.value.name} - Rick and Morty`,
   link: [{ rel: 'icon', type: 'image/x-icon', href: data.value.image }],
