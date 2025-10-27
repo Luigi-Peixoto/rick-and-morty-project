@@ -1,7 +1,7 @@
 <template>
   <svg
-    width="16"
-    height="16"
+    :width="width"
+    :height="height"
     viewBox="0 0 16 16"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -12,3 +12,10 @@
     />
   </svg>
 </template>
+
+<script lang="ts" setup>
+const { width = 16, height = 16 } = defineProps<{
+  width?: number;
+  height?: number;
+}>();
+</script>
